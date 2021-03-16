@@ -1,6 +1,12 @@
 const yaml = require("js-yaml");
 
 module.exports = config => {
+    
+    // Disable automatic use of your .gitignore
+    config.setUseGitIgnore(false);
+
+    // Merge data instead of overriding
+    config.setDataDeepMerge(true);
 
     // To Support .yaml Extension in _data
     config.addDataExtension("yaml", (contents) =>
