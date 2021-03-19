@@ -16,22 +16,22 @@ module.exports = config => {
     // Add Tailwind Output CSS as Watch Target
     config.addWatchTarget("./_tmp/static/css/style.css");
 
-    // Copy Static Files to /_Site
+    // Copy Static Files to /docs
     config.addPassthroughCopy({
     "./_tmp/static/css/style.css": "./static/css/style.css",
     "./node_modules/alpinejs/dist/alpine.js": "./static/js/alpine.js"
     });
 
-    // Copy Image Folder to /_site
+    // Copy Image Folder to /docs
     config.addPassthroughCopy("./src/static/img");
 
-    // Copy favicon to route of /_site
+    // Copy favicon to route of /docs
     config.addPassthroughCopy("./src/favicon.ico");
 
     return {
         dir: {
             input: 'src',
-            output: '_site'
+            output: 'docs'
         }
     };
 };
